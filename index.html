@@ -3,53 +3,109 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="assets/logo.png" type="image/png" />
   <title>Savannah Outdoor | Premium Branding &amp; Advertising — Sri Lanka</title>
   <meta name="description" content="Savannah Outdoor delivers premium outdoor, indoor, and vehicle branding across Sri Lanka — design, fabrication, and professional installation." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@600;700&family=Outfit:wght@300;400;500;600;700&family=Oswald:wght@600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/home.css" />
 </head>
-<body>
+<body class="page-home">
   <header class="site-header">
     <div class="wrap">
       <a href="index.html" class="logo" aria-label="Savannah Outdoor home">
-        <span class="logo-mark" aria-hidden="true">🐘</span>
-        <span class="logo-text">
-          <strong>Savannah Outdoor</strong>
-          <span>Branding &amp; Advertising</span>
-        </span>
+        <img src="assets/logo.png" alt="" class="logo-img" width="140" height="187" decoding="async" fetchpriority="high" />
       </a>
       <button type="button" class="menu-toggle" aria-label="Open menu" aria-expanded="false">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
       <nav class="nav-main" aria-label="Primary">
         <a href="index.html" aria-current="page">Home</a>
-        <a href="about.html">About</a>
+        <a href="about.html">About us</a>
         <a href="services.html">Services</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="industries.html">Industries</a>
+        <a href="portfolio.html">Projects</a>
+        <a href="portfolio.html#gallery">Gallery</a>
         <a href="contact.html">Contact</a>
-        <a href="contact.html" class="nav-cta">Get consultation</a>
+        <a href="contact.html" class="nav-cta nav-cta--quote">
+          <svg class="nav-cta__ico" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          <span>Get quote</span>
+        </a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="wrap">
-        <p class="hero-badge">Sri Lanka · Island-wide</p>
-        <h1>Powerful branding that makes your business <span>impossible to ignore</span></h1>
-        <p class="hero-lead">Premium outdoor, indoor, and vehicle branding — from creative design to fabrication and professional installation. Built for visibility, durability, and impact.</p>
-        <div class="hero-actions">
-          <a href="contact.html" class="btn btn-primary">Get a free consultation</a>
-          <a href="portfolio.html" class="btn btn-ghost">View our work</a>
+    <section class="hero-cinematic" aria-label="Introduction">
+      <div class="hero-cinematic__layers" aria-hidden="true">
+        <div class="hero-cinematic__layer hero-cinematic__layer--base"></div>
+        <div class="hero-cinematic__layer hero-cinematic__layer--photo"></div>
+        <div class="hero-cinematic__layer hero-cinematic__layer--wash"></div>
+        <div class="hero-cinematic__layer hero-cinematic__layer--vignette"></div>
+        <div class="hero-cinematic__layer hero-cinematic__layer--brush-ring"></div>
+        <div class="hero-cinematic__layer hero-cinematic__layer--smoke"></div>
+        <div class="hero-cinematic__layer hero-cinematic__layer--grain"></div>
+        <div class="hero-cinematic__layer hero-cinematic__layer--dots"></div>
+        <div class="hero-cinematic__layer hero-cinematic__layer--trees">
+          <svg class="hero-cinematic__trees-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 160" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+            <path d="M0,160 L0,118 L18,118 L22,95 L35,118 L55,112 L62,88 L72,115 L95,108 L100,82 L112,110 L140,105 L148,75 L158,102 L185,98 L195,72 L205,96 L232,92 L240,68 L252,90 L285,88 L295,62 L305,86 L340,84 L352,58 L362,82 L400,80 L412,55 L422,78 L465,76 L478,52 L488,74 L530,72 L545,48 L555,70 L595,68 L612,45 L622,66 L665,65 L682,42 L692,62 L735,60 L752,38 L762,58 L805,56 L825,35 L835,54 L880,52 L902,32 L912,50 L958,48 L982,28 L992,46 L1040,44 L1068,25 L1078,42 L1125,40 L1155,22 L1165,38 L1200,36 L1200,160 Z" />
+            <path opacity="0.65" d="M0,160 L0,132 L25,128 L32,108 L48,125 L75,120 L82,100 L95,118 L125,115 L132,92 L148,112 L178,108 L188,88 L200,105 L232,102 L242,85 L255,100 L288,98 L298,82 L312,95 L348,93 L362,78 L375,90 L412,88 L428,72 L438,85 L478,84 L498,70 L508,82 L548,80 L568,65 L578,78 L618,76 L642,62 L652,74 L698,72 L722,58 L732,70 L778,68 L805,55 L815,66 L862,64 L892,52 L902,62 L952,60 L985,50 L995,58 L1045,56 L1078,48 L1088,54 L1140,52 L1175,45 L1185,50 L1200,48 L1200,160 Z" />
+          </svg>
         </div>
-        <div class="hero-trust">
-          <span>Island-wide service</span>
-          <span>Premium materials</span>
-          <span>Professional installation</span>
+      </div>
+      <div class="hero-cinematic__inner">
+        <div class="hero-cinematic__grid">
+          <div class="hero-cinematic__rail" aria-hidden="true"></div>
+          <div class="hero-cinematic__copy">
+            <p class="hero-cinematic__kicker">We brand · We design · We deliver</p>
+            <h1 class="hero-cinematic__title">
+              <span class="hero-cinematic__title-line">Branding that</span>
+              <span class="hero-cinematic__title-line hero-cinematic__title-line--accent">dominates</span>
+              <span class="hero-cinematic__title-line">the streets.</span>
+            </h1>
+            <p class="hero-cinematic__lead">Premium outdoor, indoor and vehicle branding solutions that make your business impossible to ignore.</p>
+            <div class="hero-cinematic__actions">
+              <a href="portfolio.html" class="btn btn-primary btn-arrow">
+                View projects
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+              </a>
+              <a href="contact.html" class="btn btn-ghost btn-arrow">
+                Contact us
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+              </a>
+            </div>
+          </div>
         </div>
+      </div>
+      <p class="hero-cinematic__script">Stronger. Bolder. Unstoppable.</p>
+      <ul class="hero-cinematic__social" aria-label="Social media">
+        <li>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://wa.me/940000000000" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+        </li>
+      </ul>
+      <a href="#who" class="hero-cinematic__scroll">
+        <span class="hero-cinematic__mouse" aria-hidden="true"></span>
+        <span>Scroll down</span>
+      </a>
+      <div class="hero-cinematic__brush" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 90" preserveAspectRatio="none" focusable="false">
+          <path fill="#1a0f0a" d="M0,58 Q200,28 440,48 T880,38 T1320,52 L1440,44 L1440,90 L0,90 Z"/>
+          <path fill="#2a1510" opacity="0.55" d="M0,72 Q260,48 520,62 T1040,52 L1440,58 L1440,90 L0,90 Z"/>
+          <path fill="#3d1c0c" opacity="0.28" d="M0,82 Q320,62 640,76 T1280,68 L1440,72 L1440,90 L0,90 Z"/>
+        </svg>
       </div>
     </section>
 
@@ -177,9 +233,8 @@
   <footer class="site-footer">
     <div class="wrap footer-grid">
       <div class="footer-brand">
-        <a href="index.html" class="logo" style="margin-bottom:0.5rem">
-          <span class="logo-mark" aria-hidden="true">🐘</span>
-          <span class="logo-text"><strong>Savannah Outdoor</strong><span>Branding &amp; Advertising</span></span>
+        <a href="index.html" class="logo logo--footer" aria-label="Savannah Outdoor home">
+          <img src="assets/logo.png" alt="" class="logo-img logo-img--footer" width="140" height="187" decoding="async" />
         </a>
         <p>Premium outdoor, indoor, and vehicle branding across Sri Lanka.</p>
       </div>

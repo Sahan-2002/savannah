@@ -93,9 +93,8 @@ body::before {
 }
 
 .logo {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 0.65rem;
   color: var(--white);
   font-weight: 700;
   letter-spacing: 0.02em;
@@ -105,36 +104,26 @@ body::before {
   color: var(--white);
 }
 
-.logo-mark {
-  width: 42px;
-  height: 42px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, var(--orange) 0%, var(--orange-deep) 100%);
-  display: grid;
-  place-items: center;
-  font-size: 1.35rem;
-  line-height: 1;
-  box-shadow: 0 0 24px var(--orange-glow);
+.logo-img {
+  height: 50px;
+  width: auto;
+  max-width: 132px;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
 }
 
-.logo-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
+a.logo:hover .logo-img {
+  opacity: 0.9;
 }
 
-.logo-text strong {
-  font-family: var(--font-display);
-  font-size: 1.35rem;
-  font-weight: 400;
-  letter-spacing: 0.06em;
+.logo-img--footer {
+  height: 76px;
+  max-width: 200px;
 }
 
-.logo-text span {
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.22em;
-  color: var(--muted);
+.footer-brand .logo {
+  margin-bottom: 0.65rem;
 }
 
 .nav-main {
@@ -176,6 +165,19 @@ body::before {
   color: var(--black);
   transform: translateY(-1px);
   box-shadow: 0 8px 28px var(--orange-glow);
+}
+
+.nav-cta--quote {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+}
+
+.nav-cta__ico {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
 }
 
 .menu-toggle {

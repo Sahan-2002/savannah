@@ -1,0 +1,523 @@
+/* Homepage — fixed header overlay + luxury dark cinematic hero */
+
+.page-home .site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  height: auto;
+  min-height: 4.5rem;
+  padding: 0.35rem 0;
+  background: linear-gradient(
+    180deg,
+    rgba(5, 5, 5, 0.92) 0%,
+    rgba(5, 5, 5, 0.5) 55%,
+    transparent 100%
+  );
+  border-bottom: none;
+  backdrop-filter: blur(10px);
+}
+
+.page-home .site-header .wrap {
+  max-width: min(1320px, 94vw);
+}
+
+.page-home .logo-img {
+  height: 46px;
+  max-width: 118px;
+}
+
+.page-home .nav-main a:not(.nav-cta) {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: rgba(250, 247, 242, 0.88);
+  padding: 0.45rem 0.5rem;
+  border-radius: 0;
+  background: transparent !important;
+  border-bottom: 2px solid transparent;
+}
+
+.page-home .nav-main a:not(.nav-cta):hover {
+  color: #fff;
+  border-bottom-color: rgba(180, 90, 40, 0.35);
+}
+
+.page-home .nav-main a:not(.nav-cta)[aria-current="page"] {
+  color: #fff;
+  border-bottom-color: rgba(212, 120, 45, 0.85);
+}
+
+.page-home .nav-cta {
+  border-radius: 6px;
+  padding: 0.5rem 1rem 0.5rem 0.75rem;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* --- Cinematic hero (layered background, elephant blended right) --- */
+.hero-cinematic {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: #030303;
+  overflow: hidden;
+}
+
+/* Background stack */
+.hero-cinematic__layers {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-cinematic__layer {
+  position: absolute;
+  inset: 0;
+}
+
+/* Base charcoal */
+.hero-cinematic__layer--base {
+  background: linear-gradient(165deg, #080808 0%, #030303 45%, #050403 100%);
+}
+
+/* Elephant artwork — large, right-weighted, low contrast */
+.hero-cinematic__layer--photo {
+  background-image: url("../assets/hero-bg.png");
+  background-repeat: no-repeat;
+  background-position: 76% 42%;
+  background-size: min(115%, 1400px) auto;
+  opacity: 0.4;
+  filter: brightness(0.5) contrast(0.9) saturate(0.78);
+}
+
+@media (min-width: 1400px) {
+  .hero-cinematic__layer--photo {
+    background-position: 74% 40%;
+    background-size: cover;
+  }
+}
+
+/* Readability: deep clean left, soft falloff toward image */
+.hero-cinematic__layer--wash {
+  background: linear-gradient(
+    100deg,
+    #030303 0%,
+    rgba(5, 5, 5, 0.97) 18%,
+    rgba(8, 8, 8, 0.82) 34%,
+    rgba(10, 10, 10, 0.45) 52%,
+    rgba(6, 6, 6, 0.25) 68%,
+    transparent 88%
+  );
+}
+
+/* Vignette — cinematic frame, no bright glow */
+.hero-cinematic__layer--vignette {
+  background: radial-gradient(
+    ellipse 85% 70% at 72% 48%,
+    transparent 0%,
+    transparent 42%,
+    rgba(0, 0, 0, 0.35) 78%,
+    rgba(0, 0, 0, 0.72) 100%
+  );
+}
+
+/* Faint circular / brush halo behind elephant (depth only) */
+.hero-cinematic__layer--brush-ring {
+  background: radial-gradient(
+    ellipse 48% 44% at 76% 44%,
+    rgba(110, 48, 22, 0.1) 0%,
+    rgba(80, 35, 18, 0.05) 38%,
+    transparent 62%
+  );
+  opacity: 0.85;
+}
+
+/* Soft bottom mist / dust */
+.hero-cinematic__layer--smoke {
+  background:
+    radial-gradient(ellipse 120% 55% at 50% 100%, rgba(18, 14, 12, 0.65) 0%, transparent 55%),
+    radial-gradient(ellipse 80% 40% at 70% 100%, rgba(30, 22, 18, 0.35) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 25% at 22% 96%, rgba(255, 255, 255, 0.02) 0%, transparent 45%);
+}
+
+/* Film grain — minimal */
+.hero-cinematic__layer--grain {
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
+
+/* Subtle industrial dot grid — top-left only */
+.hero-cinematic__layer--dots {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.045) 0.6px, transparent 0.6px);
+  background-size: 11px 11px;
+  background-position: 0 0;
+  opacity: 0.55;
+  -webkit-mask-image: radial-gradient(ellipse 55% 40% at 6% 8%, #000 0%, transparent 72%);
+  mask-image: radial-gradient(ellipse 55% 40% at 6% 8%, #000 0%, transparent 72%);
+}
+
+/* Savannah silhouettes — bottom edge */
+.hero-cinematic__layer--trees {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  opacity: 0.14;
+}
+
+.hero-cinematic__trees-svg {
+  width: 100%;
+  height: clamp(72px, 14vh, 140px);
+  color: #020202;
+}
+
+.hero-cinematic__trees-svg path {
+  fill: currentColor;
+}
+
+/* Foreground content */
+.hero-cinematic__inner {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: calc(4.75rem + clamp(1rem, 4vw, 2.5rem)) 0 clamp(5.5rem, 14vh, 8rem);
+  width: 100%;
+}
+
+.hero-cinematic__grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: clamp(1rem, 2.5vw, 2rem);
+  align-items: center;
+  width: min(1320px, 94vw);
+  margin: 0 auto;
+}
+
+.hero-cinematic__rail {
+  width: 3px;
+  align-self: stretch;
+  min-height: 11rem;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 18%,
+    rgba(255, 255, 255, 0.08) 36%,
+    rgba(180, 85, 35, 0.55) 36%,
+    rgba(180, 85, 35, 0.55) 48%,
+    rgba(255, 255, 255, 0.08) 48%,
+    rgba(255, 255, 255, 0.08) 100%
+  );
+  border-radius: 2px;
+}
+
+.hero-cinematic__copy {
+  position: relative;
+  z-index: 1;
+  max-width: 36rem;
+  padding-right: clamp(0.5rem, 2vw, 1.5rem);
+}
+
+.hero-cinematic__kicker {
+  margin: 0 0 1.25rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(212, 130, 55, 0.95);
+}
+
+.hero-cinematic__title {
+  margin: 0 0 1rem;
+  line-height: 0.95;
+}
+
+.hero-cinematic__title-line {
+  display: block;
+  font-family: "Oswald", var(--font-display), sans-serif;
+  font-weight: 700;
+  font-size: clamp(2.25rem, 4.2vw, 3.35rem);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: #f5f2ec;
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.85),
+    0 4px 24px rgba(0, 0, 0, 0.45);
+}
+
+.hero-cinematic__title-line--accent {
+  font-size: clamp(3.25rem, 8.5vw, 6.25rem);
+  line-height: 0.92;
+  color: rgba(224, 130, 55, 0.98);
+  letter-spacing: 0.01em;
+  text-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.9),
+    0 0 24px rgba(90, 40, 15, 0.2);
+  filter: contrast(1.02);
+}
+
+.hero-cinematic__lead {
+  margin: 0 0 1.75rem;
+  font-size: clamp(0.95rem, 1.35vw, 1.08rem);
+  line-height: 1.55;
+  color: rgba(245, 242, 236, 0.78);
+  max-width: 30rem;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.65);
+}
+
+.hero-cinematic__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.hero-cinematic__actions .btn {
+  padding: 0.75rem 1.35rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-radius: 4px;
+}
+
+.hero-cinematic__actions .btn-primary {
+  background: rgba(200, 95, 28, 0.95);
+  color: #fff;
+  border: none;
+  gap: 0.5rem;
+}
+
+.hero-cinematic__actions .btn-primary:hover {
+  color: #fff;
+  filter: brightness(1.06);
+}
+
+.hero-cinematic__actions .btn-ghost {
+  color: #fff;
+  border: 1px solid rgba(180, 90, 40, 0.65);
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(4px);
+}
+
+.hero-cinematic__actions .btn-ghost:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(200, 110, 50, 0.55);
+}
+
+.hero-cinematic__actions .btn.btn-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hero-cinematic__actions .btn-arrow svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Script + social — anchored to hero, not a separate image column */
+.hero-cinematic__script {
+  position: absolute;
+  right: clamp(1rem, 4vw, 2.5rem);
+  bottom: clamp(5.5rem, 14vh, 7.5rem);
+  margin: 0;
+  font-family: "Caveat", cursive;
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  font-weight: 700;
+  color: rgba(200, 115, 55, 0.92);
+  line-height: 1.15;
+  text-align: right;
+  max-width: 11rem;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.85);
+  z-index: 4;
+  pointer-events: none;
+}
+
+.hero-cinematic__social {
+  position: absolute;
+  right: clamp(1rem, 3.5vw, 2.25rem);
+  bottom: clamp(1rem, 3vh, 1.75rem);
+  display: flex;
+  gap: 0.45rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: 4;
+}
+
+.hero-cinematic__social a {
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background: rgba(42, 24, 16, 0.85);
+  border: 1px solid rgba(160, 80, 35, 0.35);
+  color: rgba(230, 145, 70, 0.95);
+  transition: transform 0.2s var(--ease), background 0.2s, border-color 0.2s;
+}
+
+.hero-cinematic__social a:hover {
+  color: rgba(255, 175, 100, 1);
+  transform: translateY(-2px);
+  background: rgba(55, 30, 18, 0.9);
+  border-color: rgba(180, 90, 40, 0.45);
+}
+
+.hero-cinematic__social svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Scroll cue */
+.hero-cinematic__scroll {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(4.25rem, 10vh, 5.75rem);
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(245, 242, 236, 0.55);
+  z-index: 5;
+  transition: color 0.2s;
+}
+
+.hero-cinematic__scroll:hover {
+  color: rgba(245, 242, 236, 0.85);
+}
+
+.hero-cinematic__mouse {
+  width: 26px;
+  height: 40px;
+  border: 2px solid rgba(245, 242, 236, 0.35);
+  border-radius: 12px;
+  display: grid;
+  justify-items: center;
+  padding-top: 8px;
+}
+
+.hero-cinematic__mouse::after {
+  content: "";
+  width: 4px;
+  height: 8px;
+  background: rgba(190, 95, 40, 0.9);
+  border-radius: 2px;
+  animation: hero-scroll-nudge 1.8s ease-in-out infinite;
+}
+
+@keyframes hero-scroll-nudge {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(6px);
+    opacity: 0.55;
+  }
+}
+
+/* Bottom transition — muted, not loud */
+.hero-cinematic__brush {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  line-height: 0;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+.hero-cinematic__brush svg {
+  display: block;
+  width: 100%;
+  height: clamp(44px, 7vw, 80px);
+}
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+  .hero-cinematic__layer--photo {
+    background-position: 68% 42%;
+    background-size: cover;
+    opacity: 0.34;
+    filter: brightness(0.44) contrast(0.9) saturate(0.7);
+  }
+
+  .hero-cinematic__layer--wash {
+    background: linear-gradient(
+      105deg,
+      #030303 0%,
+      rgba(5, 5, 5, 0.95) 28%,
+      rgba(8, 8, 8, 0.7) 48%,
+      rgba(6, 6, 6, 0.35) 72%,
+      transparent 95%
+    );
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-cinematic__layer--photo {
+    background-position: 58% 40%;
+    opacity: 0.3;
+  }
+
+  .hero-cinematic__script {
+    right: 1rem;
+    bottom: clamp(6.5rem, 18vh, 8.5rem);
+    max-width: 9rem;
+    font-size: 1.35rem;
+  }
+
+  .hero-cinematic__social {
+    right: 0.85rem;
+    bottom: 0.85rem;
+  }
+
+  .hero-cinematic__grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .hero-cinematic__rail {
+    display: none;
+  }
+
+  .hero-cinematic__copy {
+    max-width: none;
+    padding-right: 0;
+  }
+
+  .hero-cinematic__scroll {
+    bottom: clamp(5.25rem, 14vh, 6.5rem);
+  }
+}
+
+@media (max-width: 900px) {
+  .page-home .nav-main a:not(.nav-cta) {
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+  }
+}
+
+.page-home main section[id] {
+  scroll-margin-top: 5.5rem;
+}
