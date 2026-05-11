@@ -21,11 +21,44 @@
 
 .page-home .site-header .wrap {
   max-width: min(1320px, 94vw);
+  gap: clamp(1rem, 2.6vw, 2.4rem);
 }
 
 .page-home .logo-img {
   height: 46px;
   max-width: 118px;
+}
+
+.page-home .logo--home-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  flex-shrink: 0;
+}
+
+.page-home .logo-brandtext {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.page-home .logo-brandtext strong {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: rgba(246, 240, 232, 0.86);
+}
+
+.page-home .logo-brandtext span {
+  font-size: 0.56rem;
+  font-weight: 500;
+  color: rgba(214, 130, 58, 0.72);
+  letter-spacing: 0.18em;
+}
+
+.page-home .nav-main {
+  margin-left: auto;
 }
 
 .page-home .nav-main a:not(.nav-cta) {
@@ -192,7 +225,7 @@
   flex: 1;
   display: flex;
   align-items: center;
-  padding: calc(4.75rem + clamp(1rem, 4vw, 2.5rem)) 0 clamp(5.5rem, 14vh, 8rem);
+  padding: calc(4.5rem + clamp(0.4rem, 2.4vw, 1.35rem)) 0 clamp(5.2rem, 12vh, 7.2rem);
   width: 100%;
 }
 
@@ -227,19 +260,53 @@
   z-index: 1;
   max-width: 36rem;
   padding-right: clamp(0.5rem, 2vw, 1.5rem);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+}
+
+.hero-cinematic__brandtitle {
+  margin: 0 0 0.35rem;
+  line-height: 1;
+}
+
+.hero-cinematic__brand-main,
+.hero-cinematic__brand-sub {
+  display: block;
+  text-transform: uppercase;
+}
+
+.hero-cinematic__brand-main {
+  font-family: "Oswald", var(--font-display), sans-serif;
+  font-size: clamp(2.25rem, 6.25vw, 4.85rem);
+  letter-spacing: 0.04em;
+  font-weight: 700;
+  color: rgba(247, 244, 238, 0.98);
+  text-shadow: 0 3px 24px rgba(0, 0, 0, 0.6);
+}
+
+.hero-cinematic__brand-sub {
+  margin-top: 0.15rem;
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 2.25vw, 1.7rem);
+  letter-spacing: 0.28em;
+  font-weight: 700;
+  color: rgba(224, 130, 55, 0.95);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
 }
 
 .hero-cinematic__kicker {
-  margin: 0 0 1.25rem;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
+  margin: 0 0 0.85rem;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(212, 130, 55, 0.95);
+  color: rgba(230, 221, 209, 0.62);
 }
 
 .hero-cinematic__title {
-  margin: 0 0 1rem;
+  margin: 0 0 0.8rem;
   line-height: 0.95;
 }
 
@@ -247,9 +314,9 @@
   display: block;
   font-family: "Oswald", var(--font-display), sans-serif;
   font-weight: 700;
-  font-size: clamp(2.25rem, 4.2vw, 3.35rem);
+  font-size: clamp(1.78rem, 3.4vw, 2.85rem);
   text-transform: uppercase;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
   color: #f5f2ec;
   text-shadow:
     0 1px 2px rgba(0, 0, 0, 0.85),
@@ -257,9 +324,9 @@
 }
 
 .hero-cinematic__title-line--accent {
-  font-size: clamp(3.25rem, 8.5vw, 6.25rem);
+  font-size: clamp(2.5rem, 6.2vw, 4.45rem);
   line-height: 0.92;
-  color: rgba(224, 130, 55, 0.98);
+  color: rgba(224, 130, 55, 0.92);
   letter-spacing: 0.01em;
   text-shadow:
     0 1px 3px rgba(0, 0, 0, 0.9),
@@ -268,7 +335,7 @@
 }
 
 .hero-cinematic__lead {
-  margin: 0 0 1.75rem;
+  margin: 0 0 1.45rem;
   font-size: clamp(0.95rem, 1.35vw, 1.08rem);
   line-height: 1.55;
   color: rgba(245, 242, 236, 0.78);
@@ -506,12 +573,41 @@
     padding-right: 0;
   }
 
+  .hero-cinematic__brand-main {
+    font-size: clamp(2rem, 11vw, 3rem);
+    letter-spacing: 0.03em;
+  }
+
+  .hero-cinematic__brand-sub {
+    font-size: clamp(0.88rem, 4.4vw, 1.2rem);
+    letter-spacing: 0.18em;
+  }
+
+  .hero-cinematic__kicker {
+    font-size: 0.58rem;
+    letter-spacing: 0.13em;
+    margin-bottom: 0.65rem;
+  }
+
+  .page-home .logo-brandtext strong {
+    font-size: 0.7rem;
+  }
+
+  .page-home .logo-brandtext span {
+    font-size: 0.57rem;
+    letter-spacing: 0.14em;
+  }
+
   .hero-cinematic__scroll {
     bottom: clamp(5.25rem, 14vh, 6.5rem);
   }
 }
 
 @media (max-width: 900px) {
+  .page-home .logo-brandtext {
+    display: none;
+  }
+
   .page-home .nav-main a:not(.nav-cta) {
     font-size: 0.8rem;
     letter-spacing: 0.08em;
